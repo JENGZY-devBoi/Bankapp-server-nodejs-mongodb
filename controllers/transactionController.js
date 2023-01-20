@@ -25,7 +25,10 @@ exports.deposit = async (req, res, next) => {
 
         res.status(200).json({
             status: 'success',
-            updateUser
+            message: `Deposit success`,
+            data: {
+                updateUser
+            }
         })
     } catch (err) {
         handleErrors.transac(err, res, 400);
@@ -49,7 +52,10 @@ exports.withdraw = async (req, res, next) => {
 
         res.status(200).json({
             status: 'success',
-            updateUser
+            message: `Withdraw success`,
+            data: {
+                updateUser
+            }
         })
     } catch (err) {
         handleErrors.transac(err, res, 400);
@@ -83,8 +89,11 @@ exports.transfer = async (req, res, nex) => {
 
         res.status(200).json({
             status: 'success',
-            updateTransfer,
-            updateRecieve
+            message: `Transfer to ${req.body.to} success`,
+            data: {
+                updateTransfer,
+                updateRecieve
+            }
         })
     } catch (err) {
         handleErrors.transac(err, res, 400);
