@@ -130,7 +130,6 @@ exports.getRecieves = async (req, res, next) => {
 }
 
 exports.getTransfers = async (req, res, next) => {
-    console.log(req.body)
     try {
         const filteredBody = handleFactory.filterObj(req.body, 'id')
 
