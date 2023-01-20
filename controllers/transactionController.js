@@ -89,7 +89,7 @@ exports.transfer = async (req, res, nex) => {
 
         res.status(200).json({
             status: 'success',
-            message: `Transfer to ${req.body.to} success`,
+            message: `Transfer success`,
             data: {
                 updateTransfer,
                 updateRecieve
