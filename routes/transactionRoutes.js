@@ -8,7 +8,7 @@ route.put('/deposit', transactionController.deposit);
 route.put('/withdraw', transactionController.withdraw);
 route.put('/transfer', transactionController.transfer);
 
-route.get('/recieves', transactionController.getRecieves);
-route.get('/transfers', transactionController.getTransfers);
+route.post('/recieves', transactionController.getRecieves);
+route.post('/transfers', transactionController.getTransfers);
 
 module.exports = route;

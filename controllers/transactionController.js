@@ -105,14 +105,15 @@ exports.transfer = async (req, res, nex) => {
 };
 
 exports.getRecieves = async (req, res, next) => {
+    console.log(req.body)
     try {
-        const filteredBody = handleFactory.filterObj(req.body, 'id')
+        const filteredBody = handleFactory.filterObj(req.params, 'id')
 
         if (!req.body.id) {
             throw Error("Missing or incomplete in the request body.");
         }
 
-        const { account: { transaction }} = await User.findById({ _id: filteredBody.id });
+        const { account: { transaction }} = await User.findById({ _id: req.body.id });
 
         const newTransaction = transaction.filter(({action}) => 
             action === 'recieve'

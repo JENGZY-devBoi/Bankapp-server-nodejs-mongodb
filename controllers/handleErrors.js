@@ -46,7 +46,6 @@ exports.user = (err, res, statusCode) => {
 };
 
 exports.transac = (err, res, statusCode) => {
-    console.log(err.message)
     let errors = { message: '' };
 
     
@@ -73,7 +72,7 @@ exports.transac = (err, res, statusCode) => {
     if (err.message === "Cannot be transferred to the current logged in account.") {
         errors.message = err.message;
     }
-    
+
     if (errors.message === "") {
         errors.message = "Something went wrong.";
     }
