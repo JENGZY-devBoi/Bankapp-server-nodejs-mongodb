@@ -1,5 +1,14 @@
 # Bankapp-server-nodejs-mongodb
 
+## Function in application
+- Login
+- Logout
+- Signup(Optional)
+- Deposit
+- Withdraw
+- Transfer
+- View all transaction
+
 ## API 
 ### Authentication
 | func | request url | type | body | params |
@@ -25,7 +34,7 @@
 | getTransfers | /api/v1/transactoin/transfer | POST | id | - |
 
 
-## documents in MongoDB
+## Documents in MongoDB
 | field | type value |
 | --- | --- |
 | name | String |
