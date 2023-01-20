@@ -7,7 +7,7 @@
 - Deposit
 - Withdraw
 - Transfer
-- View all transaction
+- View transaction[all, recieve, transfer]
 
 ## API 
 ### Authentication
