@@ -105,9 +105,8 @@ exports.transfer = async (req, res, nex) => {
 };
 
 exports.getRecieves = async (req, res, next) => {
-    console.log(req.body)
     try {
-        const filteredBody = handleFactory.filterObj(req.params, 'id')
+        const filteredBody = handleFactory.filterObj(req.body, 'id')
 
         if (!req.body.id) {
             throw Error("Missing or incomplete in the request body.");
@@ -131,6 +130,7 @@ exports.getRecieves = async (req, res, next) => {
 }
 
 exports.getTransfers = async (req, res, next) => {
+    console.log(req.body)
     try {
         const filteredBody = handleFactory.filterObj(req.body, 'id')
 
