@@ -72,16 +72,20 @@ exports.transfer = async (req, res, nex) => {
             throw Error("Missing or incomplete in the request body.");
         }
         isAction(action);
-          
+            
+        // find email(to, from)
+        const dataRecieve = await User.findOne({ email: to });
+        const { _id: id, email } = dataRecieve;
+
+        if (email === req.body.email) {
+            throw Error('Cannot be transferred to the current logged in account.')
+        }
+        
         // Update transfer account
         const updateTransfer = await handleFactory.decreaseBalance(
             { id: req.body.id, action, amount, email: req.body.to }
         );
-            
-        // find email(to, from)
-        const dataRecieve = await User.findOne({ email: to });
-       
-        const { _id: id } = dataRecieve;
+
         // Update recieve account
         const updateRecieve = await handleFactory.increaseBalance(
         { id: id, action, amount, email: req.body.email }
